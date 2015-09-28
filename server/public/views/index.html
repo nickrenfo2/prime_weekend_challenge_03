@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mr. Dr. Roboto</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="/vendor/angular/angular.min.js"></script>
+    <script src="/assets/scripts/app.min.js"></script>
+    <link rel="stylesheet" href="/assets/stylesheets/styles.css">
+</head>
+<body ng-app="app">
+    <div ng-controller="IndexController">
+
+        <button ng-click="prev()">Previous</button>
+        <button ng-click="next()">Next</button>
+        <div class="wrapper">
+            <div class="studentInfo">
+                {{students[curIndex].Name}}<br/>
+                {{students[curIndex].Description}}<br/><br/>
+                {{shoutouts[curIndex].shoutout}}
+            </div>
+            <div class="indeces">
+                    <div class="index" ng-repeat="student in students track by $index" ng-class="{selected:$index==curIndex}">{{$index}}</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
