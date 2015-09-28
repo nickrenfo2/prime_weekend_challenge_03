@@ -9,24 +9,29 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="/vendor/angular/angular.min.js"></script>
     <script src="/assets/scripts/app.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/stylesheets/styles.css">
 </head>
 <body ng-app="app">
-    <div ng-controller="IndexController">
-
-        <button ng-click="prev()">Previous</button>
-        <button ng-click="next()">Next</button>
-        <div class="wrapper">
-            <div class="studentInfo">
-                {{students[curIndex].Name}}<br/>
-                {{students[curIndex].Description}}<br/><br/>
-                {{shoutouts[curIndex].shoutout}}
+    <div ng-controller="IndexController" class="row">
+        <div class="row contentWrapper">
+            <div class="col-md-2">=
+                <button ng-click="prev()" class="prev"><i class="fa fa-angle-double-left"></i></button>
             </div>
-            <div class="indeces">
-                    <div class="index" ng-repeat="student in students track by $index" ng-class="{selected:$index==curIndex}">{{$index}}</div>
+            <div class="col-md-8 wrapper display">
+                <div class="studentInfo">
+                    <h1>{{students[curIndex].Name}}</h1>
+                    <p>{{students[curIndex].Description}}</p><br/>
+                    <p>{{shoutouts[curIndex].shoutout}}</p>
+                </div>
+                <div class="indeces">
+                        <div class="index" ng-repeat="student in students track by $index" ng-class="{selected:$index==curIndex}">{{$index}}</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button ng-click="next()" class="next"><i class="fa fa-angle-double-right"></i></button>
             </div>
         </div>
-
     </div>
 </body>
 </html>

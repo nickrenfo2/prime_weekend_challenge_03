@@ -8,12 +8,51 @@
     height:25px;
 }
 
+.indeces {
+    position:relative;
+    bottom:0px;
+    height:25px;
+}
+
 .wrapper {
     position: relative;
-    left: 50px;
-    top: 50px;
+    /*left: 50px;*/
+    /*top: 50px;*/
+    height:250px;
 }
 
 .selected{
-    background-color: lightgray;
+    background-color: white;
+}
+
+
+.prev, .next {
+    width:100px;
+    height:250px;
+    background-color:black;
+    border:1px solid lightgray;
+    border-radius:15px;
+    opacity: 0.1;
+    color:white;
+    font-size:32px;
+}
+
+.prev{
+    float:right;
+}
+
+.next{
+    float:left;
+}
+
+.contentWrapper {
+    margin-top:250px;
+}
+
+.studentInfo {
+    height:200px;
+}
+
+.display {
+    background-color:#00baba;
 }
