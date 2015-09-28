@@ -22,7 +22,7 @@ app.get('/shoutouts',function(req,res) {
     res.send(JSON.stringify(shoutouts));
 });
 
-var server = app.listen(3000, function () {
+var server = app.listen(process.env.PORT || 3000, function () {
     console.log('Listening on port: ', server.address().port);
 });
 
